@@ -53,9 +53,8 @@ export default function AddCourse() {
                 const data = { title, price, description, image, published: selected };
                 const response = await axios.post(`${BASE_URL}admin/courses`, data, {
                     headers: {
-                        "Authorization": `Bearer ${localStorage.getItem("token")}`,
                         "Content-Type": "application/json"
-                    }
+                    }, withCredentials: true,
                 });
                 if (response.data.newCourse) {
                     router.push("/courses")
