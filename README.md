@@ -11,7 +11,7 @@ yarn i
 ```
 .
 
-Then,preferrably open another instance of the terminal and navigate to the server folder of this directory, then run :
+Then, navigate to the server folder of this directory, then run :
 ```bash
 npm install
 #or
@@ -35,7 +35,7 @@ pnpm dev
 # or
 bun dev
 ```
-After running the front-end Next.js server run the Express.js backend server by navigating into the "server/dist/" directory and run : 
+After running the front-end Next.js server, preferrably open another instance of the terminal and run the Express.js backend server by navigating into the "server/dist/" directory and run : 
 ```bash
 nodemon index.js
 ```
