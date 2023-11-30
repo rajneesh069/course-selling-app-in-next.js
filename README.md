@@ -35,6 +35,7 @@ pnpm dev
 # or
 bun dev
 ```
+# Running the Backend Express.js Server
 After running the front-end Next.js server run the Express.js backend server by navigating into the "server/dist/" directory and run : 
 ```bash
 nodemon index.js
