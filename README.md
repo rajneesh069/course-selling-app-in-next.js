@@ -24,7 +24,7 @@ nodemon installed as a global dependency, if not, you can run the following comm
 ```bash
 npm i nodemon -g
 ```
-## Running the Next.js Server
+
 Now run the Next.js server using the following command : 
 ```bash
 npm run dev
