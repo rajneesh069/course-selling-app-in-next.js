@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../config";
-import { singleCourseState } from "../store/atoms/singleCourseState";
+import { BASE_URL } from "../../config";
+import { singleCourseState } from "../../store/atoms/singleCourseState";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isSingleCourseLoadingState } from "../store/selectors/isLoading";
+import { isSingleCourseLoadingState } from "../../store/selectors/isLoading";
 import { LinearProgress } from "@mui/material";
-import CourseCard from "./courseCard";
+import CourseCard from "../courseCard";
 
 
 export default function Course() {
