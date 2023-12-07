@@ -1,37 +1,20 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../../config";
+const BASE_URL = "http://localhost:5000/";
 import { singleCourseState } from "../../store/atoms/singleCourseState";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isSingleCourseLoadingState } from "../../store/selectors/isLoading";
+import { useSetRecoilState } from "recoil";
 import { LinearProgress } from "@mui/material";
 import CourseCard from "../courseCard";
+import { CourseInterface } from "@/store/atoms/allCoursesState";
 
 
-export default function Course() {
+export default function Course({ isCourseLoading, course }: { isCourseLoading: boolean, course: CourseInterface }) {
     const setCourse = useSetRecoilState(singleCourseState);
-    const router = useRouter();
-    const { courseId } = router.query;
-    const isCourseLoading = useRecoilValue(isSingleCourseLoadingState);
-    useEffect(() => {
-        const init = async () => {
-            const response = await axios.get(`${BASE_URL}admin/courses/${courseId}`, {
-                headers: {
-                    "Content-Type": "application/json"
-                }, withCredentials: true,
-            });
-            if (response.data.course) {
-                setCourse({
-                    isCourseLoading: false,
-                    course: response.data.course,
-                });
-            } else {
-                return "Error 404"
-            }
-        };
-        init();
-    }, [courseId, setCourse])
+    if (!isCourseLoading && course) {
+        setCourse({
+            isCourseLoading: false,
+            course: course,
+        });
+    }
 
     if (isCourseLoading) {
         return <LinearProgress />
@@ -40,4 +23,39 @@ export default function Course() {
         return <CourseCard />
     }
 
+}
+
+export async function getServerSideProps(context: { params: { courseId: string }, req: { headers: { cookie: string } } }) {
+    const { courseId } = context.params;
+    try {
+        const response = await axios.get(`${BASE_URL}admin/courses/${courseId}`, {
+            headers: {
+                "Content-Type": "application/json",
+                Cookie: context.req.headers.cookie,
+            }, withCredentials: true,
+        });
+        if (response.data.course) {
+            return {
+                props: {
+                    isCourseLoading: false,
+                    course: response.data.course,
+                }
+            }
+        } else {
+            return {
+                props: {
+                    isCourseLoading: false,
+                    course: null,
+                }
+            }
+        }
+    } catch (error) {
+        console.log("Error:", error);
+        return {
+            props: {
+                isCourseLoading: false,
+                course: null,
+            }
+        }
+    }
 }
