@@ -9,18 +9,7 @@ npm i
 #or
 yarn i
 ```
-.
-
-Then, navigate to the server folder of this directory, then run :
-```bash
-npm install
-#or
-npm i
-#or
-yarn i
-```
-again, to install all the server dependencies. This will include Express.js, Mongoose, JSON Web Tokens, Zod, Cookie Parser and their types. Make sure you have
-nodemon installed as a global dependency, if not, you can run the following command:
+Make sure you have nodemon installed as a global dependency, if not,then you can run the following command:
 ```bash
 npm i nodemon -g
 ```
