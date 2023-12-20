@@ -31,7 +31,11 @@ export default function Signin() {
       <Typography marginLeft="3%" marginRight="5%" variant="h5">
         Welcome. Please Sign In.
       </Typography>
+<<<<<<< HEAD
       <Card sx={{ width: "30%", minWidth: "230px", marginRight: "3%" }}>
+=======
+      <Card sx={{ width: "30%", minWidth: "250px", marginRight: "3%" }}>
+>>>>>>> 417c36788e2013ccab3c0d7a70e2625853c90a9c
         <CardContent>
           <TextField
             fullWidth
