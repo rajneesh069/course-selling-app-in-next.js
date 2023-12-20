@@ -31,7 +31,7 @@ export default function Signup() {
       <Typography marginLeft="3%" marginRight="5%" variant="h5">
         Welcome. Please Sign Up.
       </Typography>
-      <Card sx={{ width: "30%", minWidth: "250px", marginRight: "3%" }}>
+      <Card sx={{ width: "30%", minWidth: "230px", marginRight: "3%" }}>
         <CardContent>
           <TextField
             fullWidth
