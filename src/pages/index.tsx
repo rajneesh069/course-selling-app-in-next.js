@@ -8,14 +8,7 @@ export default function Landing() {
   const username = useRecoilValue(usernameState);
   const router = useRouter();
   return (
-    <div
-      style={{
-        marginTop: "0.05%",
-        padding: 0,
-        marginBottom: "0",
-        marginLeft: "0",
-      }}
-    >
+    <div style={{ margin: 0, padding: 0 }}>
       <Grid
         container
         spacing={5}
