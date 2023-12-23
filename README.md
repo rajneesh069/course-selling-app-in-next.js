@@ -24,9 +24,4 @@ pnpm dev
 # or
 bun dev
 ```
-After running the front-end Next.js server, preferrably open another instance of the terminal and run the Express.js backend server by navigating into the "server/dist/" directory and run : 
-```bash
-nodemon index.js
-```
-
 Open [http://localhost:3002](http://localhost:3002) with your browser to see the result.
