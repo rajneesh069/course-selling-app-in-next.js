@@ -22,8 +22,9 @@ export default function Appbar() {
       <div
         style={{
           marginTop: "0.12%",
-          padding: "0.25%",
+          padding: "0",
           backgroundColor: "#eee",
+          width: "100vw",
         }}
       >
         <Grid container spacing={2} justifyContent={"space-between"}>
@@ -88,8 +89,9 @@ export default function Appbar() {
       <div
         style={{
           marginTop: "0.12%",
-          padding: "0.25%",
+          padding: "0",
           backgroundColor: "#eee",
+          width: "100%",
         }}
       >
         <Grid container spacing={2} justifyContent={"space-between"}>
