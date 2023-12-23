@@ -21,7 +21,7 @@ export default function Appbar() {
     return (
       <div
         style={{
-          marginTop: "0.12%",
+          margin: "0",
           padding: "0.25%",
           backgroundColor: "#eee",
         }}
@@ -87,7 +87,7 @@ export default function Appbar() {
     return (
       <div
         style={{
-          marginTop: "0.12%",
+          margin: "0",
           padding: "0.25%",
           backgroundColor: "#eee",
         }}
