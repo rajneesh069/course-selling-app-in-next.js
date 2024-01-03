@@ -24,7 +24,7 @@ export default function Appbar() {
           marginTop: "0.12%",
           padding: "0",
           backgroundColor: "#eee",
-          width: "100vw",
+          width: "100%",
         }}
       >
         <Grid container spacing={2} justifyContent={"space-between"}>
